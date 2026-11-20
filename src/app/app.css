@@ -1,0 +1,12 @@
+.contenedor {
+  width: min(900px, 92%);
+  margin: 32px auto;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+.intro {
+  margin-bottom: 28px;
+}

@@ -1,0 +1,22 @@
+<section class="tarjeta">
+  <h2>2. Formulario Dinámico de Pasatiempos</h2>
+
+  <form [formGroup]="pasatiemposForm">
+    <div formArrayName="pasatiempos">
+      @for (pasatiempo of pasatiempos.controls; track $index; let i = $index) {
+        <div class="campo">
+          <label for="pasatiempo-{{i}}">Pasatiempo {{ i + 1 }}</label>
+          <input
+            id="pasatiempo-{{i}}"
+            type="text"
+            formControlName="{{i}}"
+            placeholder="Escribí un pasatiempo">
+        </div>
+      }
+    </div>
+
+    <button type="button" (click)="agregarPasatiempo()">Agregar Pasatiempo</button>
+  </form>
+
+  <pre>{{ pasatiemposForm.value | json }}</pre>
+</section>
